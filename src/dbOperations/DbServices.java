@@ -166,9 +166,22 @@ public class DbServices {
                         "service", null);
 
                 if (serviceTable.next()) {
+
                     System.out.println("Service table already exists");
+
+                    /*
+                    String query2 = "CREATE FULLTEXT INDEX ON service(serviceName) KEY INDEX PK__service__3213E83FE106A22C ON " +
+                            "fullTextSearchIndex WITH CHANGE_TRACKING AUTO";
+
+                    statement.executeUpdate(query2);
+                     */
+
                 } else {
                     statement.executeUpdate(createServiceTable);
+
+                    String query1 = "CREATE FULLTEXT CATALOG fullTextSearchIndex";
+                    statement.executeUpdate(query1);
+
                     System.out.println("Successfully created service table");
                 }
             }
