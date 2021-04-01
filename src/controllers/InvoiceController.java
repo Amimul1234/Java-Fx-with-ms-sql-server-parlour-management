@@ -46,6 +46,7 @@ public class InvoiceController {
             Statement statement = connection.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
             String query = "SELECT * FROM Invoice where id= '" + id + "'";
             ResultSet rs = statement.executeQuery(query);
+
             while (rs.next()) {
                 Service service = new Service();
                 service.setServiceName(rs.getString("servicename"));
@@ -53,6 +54,7 @@ public class InvoiceController {
                 services.add(service);
                 System.out.println(service);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -62,6 +64,7 @@ public class InvoiceController {
 
     public static List<InvoiceData> getInvoiceList() {
         List<InvoiceData> users = new ArrayList<>();
+
         try {
             Connection connection = DbServices.getInstance().getConnection();
             Statement statement = connection.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);

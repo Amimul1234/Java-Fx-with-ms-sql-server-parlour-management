@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="pane" prefHeight="721.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFxControllers.Invoice">
-    <Label layoutX="269.0" layoutY="6.0" prefHeight="74.0" prefWidth="318.0" text="Invoice list">
-        <font>
-          <Font name="DejaVu Sans Mono Bold" size="43.0" />
-        </font>
-    </Label>
-    <TableView fx:id="invoiceTable" layoutX="7.0" layoutY="99.0" prefHeight="520.0" prefWidth="898.0">
-      <columns>
-          <TableColumn fx:id="invoideId" prefWidth="284.0" text="Invoice id" />
-          <TableColumn fx:id="customerName" prefWidth="288.0" text="Customer Name" />
-          <TableColumn fx:id="date" prefWidth="261.0" text="Date" />
-      </columns>
-    </TableView>
-    <HBox layoutX="366.0" layoutY="639.0" prefHeight="68.0" prefWidth="183.0">
-        <Button fx:id="viewButton" mnemonicParsing="false" prefHeight="71.0" prefWidth="183.0" text="View">
+
+<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFxControllers.Invoice">
+   <center>
+      <AnchorPane fx:id="pane" prefHeight="721.0" prefWidth="897.0" stylesheets="@styles.css">
+          <TableView fx:id="invoiceTable" layoutX="40.0" layoutY="99.0" prefHeight="520.0" prefWidth="833.0">
+            <columns>
+                <TableColumn fx:id="invoideId" prefWidth="169.0" text="Invoice id" />
+                <TableColumn fx:id="customerName" prefWidth="315.0" text="Customer Name" />
+                <TableColumn fx:id="date" prefWidth="319.0" text="Date" />
+            </columns>
+          </TableView>
+           <Button fx:id="viewButton" layoutX="357.0" layoutY="643.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="183.0" stylesheets="@styles.css" text="View">
+               <font>
+                   <Font size="30.0" />
+               </font>
+           </Button>
+         <Text layoutX="369.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invoice List">
             <font>
-                <Font name="DejaVu Sans ExtraLight" size="31.0" />
+               <Font name="System Bold" size="30.0" />
             </font>
-        </Button>
-    </HBox>
-</AnchorPane>
+         </Text>
+      </AnchorPane>
+   </center>
+</BorderPane>
