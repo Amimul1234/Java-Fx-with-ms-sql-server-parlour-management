@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="721.0" prefWidth="1173.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFxControllers.ServiceReview">
+<AnchorPane fx:id="anchorPane" prefHeight="721.0" prefWidth="1173.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFxControllers.AddServiceReview">
     <AnchorPane layoutX="186.0" prefHeight="726.0" prefWidth="986.0" style="-fx-background-image: url('/HomeImages/background.jpg');">
         <ChoiceBox fx:id="selectedService" layoutX="50.0" layoutY="221.0" prefHeight="47.0" prefWidth="372.0" styleClass="choiceBox" stylesheets="@styles.css" />
         <ImageView fitHeight="440.0" fitWidth="468.0" layoutX="495.0" layoutY="202.0">

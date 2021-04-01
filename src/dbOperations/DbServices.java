@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import entities.Service;
+import entities.ServiceReviewWithJoin;
 import entities.TimeSlots;
 
 public class DbServices {
@@ -338,6 +339,45 @@ public class DbServices {
         {
             System.out.println("Can not save review to database");
             return false;
+        }
+    }
+
+    public List<ServiceReviewWithJoin> getAllReviews() {
+        if(connection != null)
+        {
+            List<ServiceReviewWithJoin> serviceReviewWithJoinList = new ArrayList<>();
+
+            try {
+                Statement statement = connection.createStatement();
+
+                //Getting review and service name from a inner join query
+                String query = "SELECT * FROM service INNER JOIN serviceReview sR on service.id = sR.id";
+
+                ResultSet resultSet = statement.executeQuery(query);
+
+                while(resultSet.next())
+                {
+                    ServiceReviewWithJoin serviceReviewWithJoin = new ServiceReviewWithJoin();
+
+                    serviceReviewWithJoin.setServiceId(resultSet.getInt("id"));
+                    serviceReviewWithJoin.setServiceReview(resultSet.getString("name"));
+                    serviceReviewWithJoin.setReviewId(resultSet.getInt("reviewId"));
+                    serviceReviewWithJoin.setServiceName("serviceName");
+
+                    serviceReviewWithJoinList.add(serviceReviewWithJoin);
+                }
+
+                return serviceReviewWithJoinList;
+
+            } catch (SQLException throwable) {
+                throwable.printStackTrace();
+                return null;
+            }
+        }
+        else
+        {
+            System.out.println("Can not save review to database");
+            return null;
         }
     }
 }

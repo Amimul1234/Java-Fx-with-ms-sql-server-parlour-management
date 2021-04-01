@@ -41,6 +41,9 @@ public class Dashboard {
     @FXML
     private Button logOut;
 
+    @FXML
+    private Button servicesReview;
+
 
     @FXML
     void initialize() {
@@ -77,6 +80,16 @@ public class Dashboard {
 
             try {
                 Pane view = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Fxml/ServiceTable.fxml")));
+                borderPane.setCenter(view);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+
+        servicesReview.setOnAction(e -> {
+            try {
+                Pane view = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().
+                        getResource("Fxml/serviceReviews.fxml")));
                 borderPane.setCenter(view);
             } catch (IOException ioException) {
                 ioException.printStackTrace();

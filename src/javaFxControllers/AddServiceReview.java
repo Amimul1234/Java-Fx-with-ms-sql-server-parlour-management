@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Objects;
 import static javaFxControllers.HomeAppointmentController.showAlert;
 
-public class ServiceReview {
+public class AddServiceReview {
 
     private final DbServices dbServices = DbServices.getInstance();
     private final List<Service> serviceList = new ArrayList<>();
