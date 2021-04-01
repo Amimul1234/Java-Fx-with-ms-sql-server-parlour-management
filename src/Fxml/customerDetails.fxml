@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="721.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFxControllers.CustomerDetails">
+    <ChoiceBox fx:id="customerNameChoiceBox" layoutX="187.0" layoutY="361.0" prefHeight="31.0" prefWidth="343.0" stylesheets="@styles.css" />
+    <ImageView fitHeight="221.0" fitWidth="349.0" layoutX="286.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
+    <Text layoutX="316.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Customer Details">
+        <font>
+          <Font name="System Bold" size="30.0" />
+        </font>
+    </Text>
+    <Text layoutX="41.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name:">
+      <font>
+         <Font size="18.0" />
+      </font></Text>
+</AnchorPane>

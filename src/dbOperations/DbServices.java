@@ -106,7 +106,7 @@ public class DbServices {
             //create customer table if not exists
             {
                 String createCustomer =
-                        "CREATE TABLE Customer(name VARCHAR(255) NOT NULL, " +
+                        "CREATE TABLE Customer(customerId INTEGER PRIMARY KEY IDENTITY (1, 1), name VARCHAR(255) NOT NULL, " +
                         "email varchar(255) NOT NULL, mobileNumber varchar(20), creationDate varchar(255) NOT NULL)";
 
                 ResultSet customerTable = connection.getMetaData().getTables(null, null,
@@ -117,6 +117,25 @@ public class DbServices {
                 } else {
                     statement.executeUpdate(createCustomer);
                     System.out.println("Successfully created customer table");
+                }
+            }
+
+            //create customer details table if not exists
+            //one to one relation ship with customer table
+            {
+                String customerDetails =
+                        "CREATE TABLE CustomerDetails(detailsId INTEGER Not Null PRIMARY KEY IDENTITY (1, 1), " +
+                                "customerRemarks varchar(max) NOT NULL, customerImage varbinary(max), " +
+                                "customerId INTEGER references customer(customerId), UNIQUE (customerId))";
+
+                ResultSet customerTable = connection.getMetaData().getTables(null, null,
+                        "CustomerDetails", null);
+
+                if (customerTable.next()) {
+                    System.out.println("Customer Details table already exists");
+                } else {
+                    statement.executeUpdate(customerDetails);
+                    System.out.println("Successfully created customer details table");
                 }
             }
 

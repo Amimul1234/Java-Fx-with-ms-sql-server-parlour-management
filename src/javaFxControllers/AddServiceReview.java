@@ -12,6 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.controlsfx.control.Rating;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,9 @@ public class AddServiceReview {
 
     @FXML
     private TextArea serviceReview;
+
+    @FXML
+    private Rating ratingBar;
 
     @FXML
     public void initialize()

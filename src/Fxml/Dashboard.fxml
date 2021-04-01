@@ -13,10 +13,12 @@
                <VBox prefHeight="721.0" prefWidth="269.0" stylesheets="@styles.css">
                    <Button fx:id="dashboard" mnemonicParsing="false" prefHeight="121.0" prefWidth="293.0" text="Dashboard" />
                    <Button fx:id="addService" mnemonicParsing="false" prefHeight="121.0" prefWidth="269.0" text="Add Services" />
+               <Button fx:id="addServiceDetails" mnemonicParsing="false" prefHeight="121.0" prefWidth="269.0" text="Add Service Details" />
                    <Button fx:id="service" mnemonicParsing="false" prefHeight="121.0" prefWidth="269.0" text="Services" />
                <Button fx:id="servicesReview" mnemonicParsing="false" prefHeight="121.0" prefWidth="269.0" text="Services Review" />
                    <Button fx:id="appointment" mnemonicParsing="false" prefHeight="121.0" prefWidth="269.0" text="Appointments" />
                    <Button fx:id="addCustomer" mnemonicParsing="false" prefHeight="121.0" prefWidth="269.0" text="Add Customer" />
+               <Button fx:id="addCustomerDetails" mnemonicParsing="false" prefHeight="121.0" prefWidth="269.0" text="Add Customer Details" />
                    <Button fx:id="customerList" mnemonicParsing="false" prefHeight="121.0" prefWidth="269.0" text="Customer List" />
                    <Button fx:id="invoice" mnemonicParsing="false" prefHeight="121.0" prefWidth="269.0" text="Invoice" />
                <Button fx:id="logOut" mnemonicParsing="false" prefHeight="121.0" prefWidth="269.0" text="Log Out" />

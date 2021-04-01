@@ -242,7 +242,7 @@
     </schema>
     <schema id="44" parent="7" name="dbo">
       <ObjectId>1</ObjectId>
-      <IntrospectionTimestamp>2021-04-01.20:13:31.740</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2021-04-02.03:12:33.620</IntrospectionTimestamp>
       <Current>1</Current>
     </schema>
     <schema id="45" parent="7" name="guest">
@@ -330,110 +330,197 @@
       <AuthType>none</AuthType>
     </role>
     <table id="61" parent="44" name="Customer">
-      <ObjectId>370100359</ObjectId>
-      <CreatedTimestamp>2021-03-31.20:48:32.803</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-31.20:48:32.803</ModifiedTimestamp>
+      <ObjectId>1618104805</ObjectId>
+      <CreatedTimestamp>2021-04-02.03:07:09.013</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-02.03:12:27.803</ModifiedTimestamp>
     </table>
-    <table id="62" parent="44" name="Invoice">
+    <table id="62" parent="44" name="CustomerDetails">
+      <ObjectId>1762105318</ObjectId>
+      <CreatedTimestamp>2021-04-02.03:12:27.800</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-02.03:12:27.800</ModifiedTimestamp>
+    </table>
+    <table id="63" parent="44" name="Invoice">
       <ObjectId>34099162</ObjectId>
       <CreatedTimestamp>2021-03-22.04:47:02.280</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-22.04:47:02.280</ModifiedTimestamp>
     </table>
-    <table id="63" parent="44" name="admin">
+    <table id="64" parent="44" name="admin">
       <ObjectId>1925581898</ObjectId>
       <CreatedTimestamp>2021-03-15.22:17:52.120</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-15.22:17:52.120</ModifiedTimestamp>
     </table>
-    <table id="64" parent="44" name="appointment">
+    <table id="65" parent="44" name="appointment">
       <ObjectId>1845581613</ObjectId>
       <CreatedTimestamp>2021-03-15.22:17:52.080</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-15.22:17:52.080</ModifiedTimestamp>
     </table>
-    <table id="65" parent="44" name="service">
+    <table id="66" parent="44" name="service">
       <ObjectId>1893581784</ObjectId>
       <CreatedTimestamp>2021-03-15.22:17:52.117</CreatedTimestamp>
       <ModifiedTimestamp>2021-04-01.16:49:42.493</ModifiedTimestamp>
     </table>
-    <table id="66" parent="44" name="serviceReview">
+    <table id="67" parent="44" name="serviceReview">
       <ObjectId>1298103665</ObjectId>
       <CreatedTimestamp>2021-04-01.16:49:42.493</CreatedTimestamp>
       <ModifiedTimestamp>2021-04-01.16:49:42.493</ModifiedTimestamp>
     </table>
-    <table id="67" parent="44" name="timeSlots">
+    <table id="68" parent="44" name="timeSlots">
       <ObjectId>1877581727</ObjectId>
       <CreatedTimestamp>2021-03-15.22:17:52.100</CreatedTimestamp>
       <ModifiedTimestamp>2021-03-15.22:17:52.100</ModifiedTimestamp>
     </table>
-    <column id="68" parent="61" name="name">
-      <Position>1</Position>
-      <DataType>varchar(255 char)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="69" parent="61" name="email">
-      <Position>2</Position>
-      <DataType>varchar(255 char)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="70" parent="61" name="mobileNumber">
-      <Position>3</Position>
-      <DataType>varchar(20 char)|0s</DataType>
-    </column>
-    <column id="71" parent="61" name="creationDate">
-      <Position>4</Position>
-      <DataType>varchar(255 char)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="72" parent="62" name="customername">
-      <Position>1</Position>
-      <DataType>varchar(255 char)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="73" parent="62" name="servicename">
-      <Position>2</Position>
-      <DataType>varchar(255 char)|0s</DataType>
-    </column>
-    <column id="74" parent="62" name="serviceprice">
-      <Position>3</Position>
-      <DataType>varchar(255 char)|0s</DataType>
-    </column>
-    <column id="75" parent="62" name="date">
-      <Position>4</Position>
-      <DataType>varchar(255 char)|0s</DataType>
-    </column>
-    <column id="76" parent="62" name="id">
-      <Position>5</Position>
-      <DataType>varchar(255 char)|0s</DataType>
-    </column>
-    <column id="77" parent="63" name="adminId">
+    <column id="69" parent="61" name="customerId">
       <Position>1</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="78" parent="63" name="name">
+    <column id="70" parent="61" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="61" name="email">
+      <Position>3</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="61" name="mobileNumber">
+      <Position>4</Position>
+      <DataType>varchar(20 char)|0s</DataType>
+    </column>
+    <column id="73" parent="61" name="creationDate">
+      <Position>5</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="74" parent="61" name="PK__Customer__B611CB7DA452F54F">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>customerId</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="75" parent="61" name="PK__Customer__B611CB7DA452F54F">
+      <ObjectId>1634104862</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2021-04-02.03:07:09.030</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-02.03:07:09.030</ModifiedTimestamp>
+      <ColNames>customerId</ColNames>
+      <UnderlyingIndexName>PK__Customer__B611CB7DA452F54F</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="76" parent="62" name="detailsId">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="62" name="customerRemarks">
+      <Position>2</Position>
+      <DataType>varchar(max)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="62" name="customerImage">
+      <Position>3</Position>
+      <DataType>varbinary(max)|0s</DataType>
+    </column>
+    <column id="79" parent="62" name="customerId">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <index id="80" parent="62" name="PK__Customer__EB8EA7B098CA4ADF">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>detailsId</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="81" parent="62" name="UQ__Customer__B611CB7CBED1008F">
+      <Position>2</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>customerId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="82" parent="62" name="PK__Customer__EB8EA7B098CA4ADF">
+      <ObjectId>1778105375</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2021-04-02.03:12:27.800</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-02.03:12:27.800</ModifiedTimestamp>
+      <ColNames>detailsId</ColNames>
+      <UnderlyingIndexName>PK__Customer__EB8EA7B098CA4ADF</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="83" parent="62" name="UQ__Customer__B611CB7CBED1008F">
+      <ObjectId>1794105432</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2021-04-02.03:12:27.803</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-02.03:12:27.803</ModifiedTimestamp>
+      <ColNames>customerId</ColNames>
+      <UnderlyingIndexName>UQ__Customer__B611CB7CBED1008F</UnderlyingIndexName>
+    </key>
+    <foreign-key id="84" parent="62" name="FK__CustomerD__custo__6BE40491">
+      <ObjectId>1810105489</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2021-04-02.03:12:27.803</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-02.03:12:27.803</ModifiedTimestamp>
+      <ColNames>customerId</ColNames>
+      <RefTableId>1618104805</RefTableId>
+      <RefTableName>Customer</RefTableName>
+      <RefKeyName>PK__Customer__B611CB7DA452F54F</RefKeyName>
+      <RefColNames>customerId</RefColNames>
+    </foreign-key>
+    <column id="85" parent="63" name="customername">
+      <Position>1</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="63" name="servicename">
       <Position>2</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="79" parent="63" name="password">
+    <column id="87" parent="63" name="serviceprice">
       <Position>3</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="80" parent="63" name="email">
+    <column id="88" parent="63" name="date">
       <Position>4</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="81" parent="63" name="contactNumber">
+    <column id="89" parent="63" name="id">
       <Position>5</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <index id="82" parent="63" name="PK__admin__AD0500A6834DA27A">
+    <column id="90" parent="64" name="adminId">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="64" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="92" parent="64" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="93" parent="64" name="email">
+      <Position>4</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="94" parent="64" name="contactNumber">
+      <Position>5</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <index id="95" parent="64" name="PK__admin__AD0500A6834DA27A">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>adminId</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="83" parent="63" name="PK__admin__AD0500A6834DA27A">
+    <key id="96" parent="64" name="PK__admin__AD0500A6834DA27A">
       <ObjectId>1941581955</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2021-03-15.22:17:52.120</CreatedTimestamp>
@@ -442,64 +529,64 @@
       <UnderlyingIndexName>PK__admin__AD0500A6834DA27A</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="84" parent="64" name="appointmentId">
+    <column id="97" parent="65" name="appointmentId">
       <Position>1</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="85" parent="64" name="appointmentNumber">
+    <column id="98" parent="65" name="appointmentNumber">
       <Position>2</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="86" parent="64" name="name">
+    <column id="99" parent="65" name="name">
       <Position>3</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="87" parent="64" name="email">
+    <column id="100" parent="65" name="email">
       <Position>4</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="88" parent="64" name="phoneNumber">
+    <column id="101" parent="65" name="phoneNumber">
       <Position>5</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="89" parent="64" name="appointMakingDate">
+    <column id="102" parent="65" name="appointMakingDate">
       <Position>6</Position>
       <DataType>date|0s</DataType>
     </column>
-    <column id="90" parent="64" name="appointmentTime">
+    <column id="103" parent="65" name="appointmentTime">
       <Position>7</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="91" parent="64" name="selectedService">
+    <column id="104" parent="65" name="selectedService">
       <Position>8</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="92" parent="64" name="appointmentDate">
+    <column id="105" parent="65" name="appointmentDate">
       <Position>9</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <column id="93" parent="64" name="remark">
+    <column id="106" parent="65" name="remark">
       <Position>10</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="94" parent="64" name="status">
+    <column id="107" parent="65" name="status">
       <Position>11</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="95" parent="64" name="remarkDate">
+    <column id="108" parent="65" name="remarkDate">
       <Position>12</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <index id="96" parent="64" name="PK__appointm__D06765FE0A5458D9">
+    <index id="109" parent="65" name="PK__appointm__D06765FE0A5458D9">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>appointmentId</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="97" parent="64" name="PK__appointm__D06765FE0A5458D9">
+    <key id="110" parent="65" name="PK__appointm__D06765FE0A5458D9">
       <ObjectId>1861581670</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2021-03-15.22:17:52.083</CreatedTimestamp>
@@ -508,28 +595,28 @@
       <UnderlyingIndexName>PK__appointm__D06765FE0A5458D9</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="98" parent="65" name="id">
+    <column id="111" parent="66" name="id">
       <Position>1</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="99" parent="65" name="serviceName">
+    <column id="112" parent="66" name="serviceName">
       <Position>2</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="100" parent="65" name="servicePrice">
+    <column id="113" parent="66" name="servicePrice">
       <Position>3</Position>
       <DataType>float|0s</DataType>
     </column>
-    <index id="101" parent="65" name="PK__service__3213E83F3B4E6D8A">
+    <index id="114" parent="66" name="PK__service__3213E83F3B4E6D8A">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="102" parent="65" name="PK__service__3213E83F3B4E6D8A">
+    <key id="115" parent="66" name="PK__service__3213E83F3B4E6D8A">
       <ObjectId>1909581841</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2021-03-15.22:17:52.117</CreatedTimestamp>
@@ -538,28 +625,28 @@
       <UnderlyingIndexName>PK__service__3213E83F3B4E6D8A</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="103" parent="66" name="reviewId">
+    <column id="116" parent="67" name="reviewId">
       <Position>1</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="104" parent="66" name="name">
+    <column id="117" parent="67" name="name">
       <Position>2</Position>
       <DataType>varchar(max)|0s</DataType>
     </column>
-    <column id="105" parent="66" name="id">
+    <column id="118" parent="67" name="id">
       <Position>3</Position>
       <DataType>int|0s</DataType>
     </column>
-    <index id="106" parent="66" name="PK__serviceR__2ECD6E04EF8591AB">
+    <index id="119" parent="67" name="PK__serviceR__2ECD6E04EF8591AB">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>reviewId</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="107" parent="66" name="PK__serviceR__2ECD6E04EF8591AB">
+    <key id="120" parent="67" name="PK__serviceR__2ECD6E04EF8591AB">
       <ObjectId>1314103722</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2021-04-01.16:49:42.493</CreatedTimestamp>
@@ -568,7 +655,7 @@
       <UnderlyingIndexName>PK__serviceR__2ECD6E04EF8591AB</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="108" parent="66" name="FK__serviceRevie__id__4F47C5E3">
+    <foreign-key id="121" parent="67" name="FK__serviceRevie__id__4F47C5E3">
       <ObjectId>1330103779</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2021-04-01.16:49:42.493</CreatedTimestamp>
@@ -579,7 +666,7 @@
       <RefKeyName>PK__service__3213E83F3B4E6D8A</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="109" parent="67" name="timeSlots">
+    <column id="122" parent="68" name="timeSlots">
       <Position>1</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>

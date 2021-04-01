@@ -44,6 +44,12 @@ public class Dashboard {
     @FXML
     private Button servicesReview;
 
+    @FXML
+    private Button addCustomerDetails;
+
+    @FXML
+    private Button addServiceDetails;
+
 
     @FXML
     void initialize() {
@@ -128,7 +134,8 @@ public class Dashboard {
 
         invoice.setOnAction(e -> {
             try {
-                Pane view = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Fxml/Invoice.fxml")));
+                Pane view = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getClassLoader().getResource("Fxml/Invoice.fxml")));
                 borderPane.setCenter(view);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
@@ -142,6 +149,17 @@ public class Dashboard {
                 Stage appStage = (Stage) borderPane.getScene().getWindow();
                 appStage.setScene(scene);
                 appStage.show();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+
+        addCustomerDetails.setOnAction(e -> {
+            try {
+                Pane view = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getClassLoader().getResource("Fxml/customerDetails.fxml")));
+
+                borderPane.setCenter(view);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
