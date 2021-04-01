@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="homeBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="721.0" prefWidth="1173.0" stylesheets="@styles.css"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="javaFxControllers.HomeAppointmentController">
+
+    <right>
+
+        <ImageView fitHeight="540.0" fitWidth="549.0" BorderPane.alignment="CENTER">
+            <Image url="@../HomeImages/makeUpArtistsPana.png" />
+        </ImageView>
+    </right>
+    <left>
+        <VBox prefHeight="721.0" prefWidth="186.0" style="-fx-background-color: #708090;" BorderPane.alignment="CENTER">
+            <Button mnemonicParsing="false" onAction="#homeScreen" prefHeight="65.0" prefWidth="186.0" stylesheets="@styles.css" text="Home" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#services" prefHeight="77.0" prefWidth="186.0" stylesheets="@styles.css" text="Services">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#aboutUs" prefHeight="77.0" prefWidth="186.0" stylesheets="@styles.css" text="About Us">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#contactUs" prefHeight="81.0" prefWidth="186.0" stylesheets="@styles.css" text="Contact Us">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#admin" prefHeight="71.0" prefWidth="186.0" stylesheets="@styles.css" text="Admin">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Button>
+         <Button mnemonicParsing="false" onAction="#serviceReview" prefHeight="71.0" prefWidth="186.0" stylesheets="@styles.css" text="Review">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Button>
+        </VBox>
+    </left>
+    <center>
+        <AnchorPane prefHeight="728.0" prefWidth="525.0" BorderPane.alignment="CENTER">
+            <Text layoutX="99.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Get Pretty Look" textAlignment="CENTER" wrappingWidth="236.2734375">
+                <font>
+                    <Font name="System Bold" size="29.0" />
+                </font>
+            </Text>
+            <Text layoutX="41.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="We pride ourselves on our high quality work and attention to detail. The product we use are top quality branded products." wrappingWidth="352.193359375" />
+            <Text layoutX="11.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Get Appointment Now!" textAlignment="CENTER" wrappingWidth="430.37890625" />
+            <TextField fx:id="appointmentMakerName" layoutX="40.0" layoutY="237.0" prefHeight="8.0" prefWidth="372.0" promptText="Name" styleClass="textBox" />
+            <TextField fx:id="appointmentMakerEmail" layoutX="40.0" layoutY="297.0" prefHeight="33.0" prefWidth="372.0" promptText="Email" styleClass="textBox" />
+            <ChoiceBox fx:id="selectedService" layoutX="40.0" layoutY="359.0" prefHeight="50.0" prefWidth="372.0" styleClass="choiceBox" />
+            <Text fx:id="selectServices" layoutX="53.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="choiceBoxText" text="Select Services" />
+            <DatePicker fx:id="appointmentDate" layoutX="40.0" layoutY="428.0" prefHeight="55.0" prefWidth="373.0" promptText="Select Appointment Date" styleClass="text-field" />
+            <TextField fx:id="appointmentMakerPhone" layoutX="40.0" layoutY="561.0" prefHeight="49.0" prefWidth="374.0" promptText="Phone" styleClass="textBox" />
+            <Button layoutX="42.0" layoutY="633.0" mnemonicParsing="false" onAction="#makeAnAppointment" prefHeight="50.0" prefWidth="370.0" style="-fx-border-color: #ff725e;" text="Submit" />
+            <ChoiceBox fx:id="appointmentTimeChoiceBox" layoutX="41.0" layoutY="495.0" prefHeight="50.0" prefWidth="372.0" styleClass="choiceBox" />
+            <Text fx:id="selectAppointmentTimeText" layoutX="53.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="choiceBoxText" text="Select Appointment Time" />
+        </AnchorPane>
+    </center>
+</BorderPane>
