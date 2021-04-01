@@ -3,7 +3,7 @@ package entities;
 import java.io.Serializable;
 
 public class Customer implements Serializable {
-
+    private Integer customerId;
     private String creationDate;
     private String name;
     private String email;
@@ -18,6 +18,14 @@ public class Customer implements Serializable {
 
     public Customer() {
 
+    }
+
+    public Integer getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     public String getCreationDate() {

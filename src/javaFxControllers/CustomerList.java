@@ -17,7 +17,6 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -82,11 +81,16 @@ public class CustomerList {
 
                 try {
 
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Fxml/customerDetails.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Fxml/customerAllDetails.fxml"));
 
                     Scene scene = new Scene(fxmlLoader.load(), 1173, 721);
                     Stage stage = new Stage();
                     stage.setTitle("Customer Details");
+
+                    CustomerAllDetails customerAllDetails = fxmlLoader.getController();
+                    customerAllDetails.setCustomer(tableView.getSelectionModel().getSelectedItem());
+
+
                     stage.getIcons().add(new Image("HomeImages/parlourLogo.png"));
                     stage.setScene(scene);
                     stage.show();

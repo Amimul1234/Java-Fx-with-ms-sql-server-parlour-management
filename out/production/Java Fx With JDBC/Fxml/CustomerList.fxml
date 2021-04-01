@@ -33,12 +33,11 @@
                   <Font name="System Bold" size="30.0" />
               </font>
           </Label>
-          <Button fx:id="assignService" layoutX="643.0" layoutY="661.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="240.0" stylesheets="@styles.css" text="Assign Service">
+          <Button fx:id="assignService" layoutX="328.0" layoutY="661.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="240.0" stylesheets="@styles.css" text="Assign Service">
               <font>
                 <Font name="DejaVu Sans ExtraLight" size="22.0" />
               </font>
           </Button>
-         <Button layoutX="396.0" layoutY="662.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="211.0" stylesheets="@styles.css" text="Add Customer Details" />
       </AnchorPane>
    </center>
 </BorderPane>
