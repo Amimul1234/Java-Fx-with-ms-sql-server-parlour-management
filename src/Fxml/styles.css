@@ -1,0 +1,71 @@
+.button {
+    -fx-background-color: white;
+    -fx-text-fill: #ff725e;
+}
+
+.button:hover {
+    -fx-background-color: #ff725e;
+    -fx-text-fill: #f1f1f1;
+}
+
+.text {
+    -fx-font-size: 20;
+}
+.root {
+    -fx-font-size: 30;
+    -fx-background-image: url("/HomeImages/background.jpg");
+    -fx-background-size: cover;
+}
+.textBox {
+    -fx-font-size: 20;
+    -fx-font-color: silver;
+    -fx-border-color: silver;
+    -fx-background-color: white;
+}
+.choiceBox {
+    -fx-background-color: white;
+    -fx-border-color: silver;
+}
+.choiceBoxText {
+    -fx-font-size: 20;
+    -fx-fill: silver;
+}
+.date-picker {
+    -fx-font-size: 20;
+    -fx-font-color: silver;
+    -fx-border-color: silver;
+    -fx-background-color: white;
+}
+.table-view {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-padding: 15 15 15 15;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: steelblue;
+}
+.table-row-cell:selected .text {
+    -fx-fill: red ;
+
+}
+
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: white;
+    -fx-border-color: #4dffc3;
+    -fx-padding: 15;
+}
+.table-view .cell{
+    -fx-background-color: transparent;
+    -fx-border-color: #000000;
+    -fx-border-width: 0.5;
+}
+.hbox {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-padding: 15;
+}
+.vbox {
+    -fx-background-color: transparent;
+}

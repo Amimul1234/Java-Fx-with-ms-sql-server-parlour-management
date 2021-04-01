@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="721.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFxControllers.ServiceTable">
+    
+    <TableView fx:id="servicesTable" layoutX="11.0" layoutY="70.0" prefHeight="644.0" prefWidth="874.0" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="serviceId" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="serviceName" prefWidth="273.0" text="Service Name" />
+            <TableColumn fx:id="serviceCharge" prefWidth="305.0" text="Service Charge" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+   <Text layoutX="372.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Services" wrappingWidth="149.966796875">
+      <font>
+         <Font size="40.0" />
+      </font>
+   </Text>
+</AnchorPane>
