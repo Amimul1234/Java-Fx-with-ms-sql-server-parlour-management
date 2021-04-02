@@ -1,5 +1,6 @@
 # JavaFx Parlour Management System with Ms sql server
-This project is based on ms sql server. This autometically creates all the required table. So, you don't have to worry about anything.
+
+This project is based on ms sql server. This autometically creates all the required table. So, you don't have to worry about anything. This project is created only in 3 days. You are completely free to use the codes.
 
 To make it work it on your machine:
 goto: src -> dbOperations -> DbServices -> change connection url
