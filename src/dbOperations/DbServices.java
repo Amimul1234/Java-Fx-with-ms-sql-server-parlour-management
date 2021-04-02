@@ -10,7 +10,6 @@ import entities.Service;
 import entities.ServiceJoinedTable;
 import entities.ServiceReviewWithJoin;
 import entities.TimeSlots;
-import javafx.scene.control.TableColumn;
 
 public class DbServices {
 
@@ -286,6 +285,40 @@ public class DbServices {
         }
     }
 
+    public synchronized List<String> getServicesNameAll() {
+
+        if(connection != null)
+        {
+            try {
+
+                List<String> serviceList = new ArrayList<>();
+
+                Statement statement = connection.createStatement();
+
+
+                //Select the 5 sorted via price that are not in top 5 services
+                String query = "SELECT * FROM service";
+
+                ResultSet resultSet = statement.executeQuery(query);
+
+                while(resultSet.next())
+                {
+                    serviceList.add(resultSet.getString("serviceName"));
+                }
+
+                return serviceList;
+
+            } catch (Exception e) {
+                return null;
+            }
+        }
+        else
+        {
+            System.out.println("Can not connect to database, please try again");
+            return null;
+        }
+    }
+
     public synchronized List<Service> getSearchedService(String queryString)
     {
         if(connection != null)
@@ -505,7 +538,7 @@ public class DbServices {
     public synchronized ServiceJoinedTable getServiceJoinedTable(int serviceIdIdentifier) throws SQLException {
 
         PreparedStatement getServiceJoinedTable = connection.prepareStatement
-                ("SELECT * FROM service LEFT JOIN serviceReview sR on service.id = sR.id WHERE service.id = ?");
+                ("SELECT * FROM service INNER JOIN serviceReview sR on service.id = sR.id WHERE service.id = ?");
 
         getServiceJoinedTable.setInt(1, serviceIdIdentifier);
 

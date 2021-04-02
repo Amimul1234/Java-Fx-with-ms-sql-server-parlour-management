@@ -40,7 +40,7 @@ public class AddServiceReview {
     {
         new Thread(() -> {
 
-            final List<String> servicesNamesList = dbServices.getServicesName();
+            final List<String> servicesNamesList = dbServices.getServicesNameAll();
             serviceList.addAll(dbServices.getAllServicesRecords());
 
             if (!servicesNamesList.isEmpty())

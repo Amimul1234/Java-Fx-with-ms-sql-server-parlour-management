@@ -13,7 +13,7 @@
         </font>
     </Text>
     <ImageView fx:id="customerImage" fitHeight="198.0" fitWidth="257.0" layoutX="458.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" />
-    <Text layoutX="79.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name:">
+    <Text layoutX="72.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name:">
         <font>
           <Font size="18.0" />
         </font>
@@ -23,7 +23,7 @@
          <Font size="18.0" />
       </font>
    </Text>
-   <Text layoutX="98.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address:">
+   <Text layoutX="72.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address:">
       <font>
          <Font size="18.0" />
       </font>
@@ -33,7 +33,7 @@
          <Font size="18.0" />
       </font>
    </Text>
-   <Text layoutX="84.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number:">
+   <Text layoutX="72.0" layoutY="566.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number:">
       <font>
          <Font size="18.0" />
       </font>
@@ -49,7 +49,7 @@
       </font>
    </Text>
    <TextArea fx:id="customerRemarks" editable="false" layoutX="745.0" layoutY="372.0" prefHeight="296.0" prefWidth="405.0" />
-   <Text layoutX="87.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Information">
+   <Text layoutX="87.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Information">
       <font>
          <Font name="System Bold" size="25.0" />
       </font>
