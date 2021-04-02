@@ -1,13 +1,14 @@
 package javaFxControllers;
 
 import dbOperations.CustomerOperations;
+import dbOperations.DbServices;
 import entities.Customer;
+import entities.Service;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -19,80 +20,71 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class CustomerDetails {
+public class AddServiceDetails {
 
-    private final List<Customer> customerList = new ArrayList<>();
+    private final List<Service> serviceList = new ArrayList<>();
     private File file;
 
     @FXML
     private BorderPane borderPane;
 
     @FXML
-    private ChoiceBox<String> customerNameChoiceBox;
+    private ChoiceBox<String> serviceNameChoiceBox;
 
     @FXML
-    private ImageView imageView;
-
-    @FXML
-    private TextArea remarks;
+    private ImageView serviceImage;
 
     @FXML
     public void initialize()
     {
         new Thread(() -> Platform.runLater(() -> {
 
-            customerList.addAll(new CustomerOperations().getCustomer());
+            serviceList.addAll(DbServices.getInstance().getAllServicesRecords());
 
-            for(Customer customer : customerList)
+            for(Service service : serviceList)
             {
-                customerNameChoiceBox.getItems().add(customer.getName());
+                serviceNameChoiceBox.getItems().add(service.getServiceName());
             }
 
-            if(customerList.size() > 0)
-                customerNameChoiceBox.setValue(customerList.get(0).getName());
+            if(serviceList.size() > 0)
+                serviceNameChoiceBox.setValue(serviceList.get(0).getServiceName());
 
         })).start();
     }
 
     @FXML
-    void addCustomerDetails() {
+    void addServiceImage() {
         if(file == null)
         {
             showAlert("Error!", "Customer image can not be null");
         }
-        else if(remarks.getText().isEmpty())
-        {
-            showAlert("ERROR!", "Remarks can not be null");
-        }
         else
         {
-            String name = customerNameChoiceBox.getSelectionModel().getSelectedItem();
-            Integer customerId = null;
+            String name = serviceNameChoiceBox.getSelectionModel().getSelectedItem();
 
-            for(Customer customer : customerList)
+            Integer serviceId = null;
+
+            for(Service service : serviceList)
             {
-                if(customer.getName().equals(name))
+                if(service.getServiceName().equals(name))
                 {
-                    customerId = customer.getCustomerId();
+                    serviceId = service.getId();
                     break;
                 }
             }
 
-            Integer finalCustomerId = customerId;
+            Integer finalCustomerId = serviceId;
 
             new Thread(() -> {
-                CustomerOperations customerOperations = new CustomerOperations();
                 try
                 {
-                    customerOperations.saveCustomerDetails(file, finalCustomerId, remarks.getText());
+                    DbServices.getInstance().saveServiceImage(file, finalCustomerId);
 
                     Platform.runLater(() -> {
-                        remarks.setText(null);
-                        imageView.setImage(null);
 
                         try {
                             Pane view = FXMLLoader.load(Objects.requireNonNull(getClass().
-                                    getClassLoader().getResource("Fxml/CustomerList.fxml")));
+                                    getClassLoader().getResource("Fxml/AdminDashboard.fxml")));
                             borderPane.setCenter(view);
                         } catch (IOException ioException) {
                             ioException.printStackTrace();
@@ -102,7 +94,7 @@ public class CustomerDetails {
                 }catch (Exception e)
                 {
                     Platform.runLater(() -> {
-                        showAlert("Error!", "Can not save customer details");
+                        showAlert("Error!", "Can not save service image");
                         System.out.println(e.getMessage());
                     });
                 }
@@ -111,10 +103,8 @@ public class CustomerDetails {
         }
     }
 
-
     @FXML
     void imageSelected() {
-        //getting only images
         FileChooser.ExtensionFilter imageFilter
                 = new FileChooser.ExtensionFilter("Image Files", "*.jpg");
 
@@ -122,17 +112,17 @@ public class CustomerDetails {
         chooser.getExtensionFilters().add(imageFilter);
         chooser.setTitle("Select Image");
 
-        file = chooser.showOpenDialog(imageView.getScene().getWindow());
+        file = chooser.showOpenDialog(serviceImage.getScene().getWindow());
 
         if(file != null)
         {
             Image image = new Image(file.toURI().toString());
-            imageView.setFitWidth(400);
-            imageView.setFitHeight(240);
-            imageView.setImage(image);
-            imageView.setSmooth(true);
-            imageView.setCache(true);
-            imageView.setPreserveRatio(true);
+            serviceImage.setFitWidth(400);
+            serviceImage.setFitHeight(240);
+            serviceImage.setImage(image);
+            serviceImage.setSmooth(true);
+            serviceImage.setCache(true);
+            serviceImage.setPreserveRatio(true);
         }
     }
 

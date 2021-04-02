@@ -9,11 +9,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import org.controlsfx.control.Rating?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="721.0" prefWidth="1173.0"
-            xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane fx:id="anchorPane" prefHeight="721.0" prefWidth="1173.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="javaFxControllers.AddServiceReview">
     <AnchorPane layoutX="186.0" prefHeight="726.0" prefWidth="986.0" style="-fx-background-image: url('/HomeImages/background.jpg');">
         <ChoiceBox fx:id="selectedService" layoutX="50.0" layoutY="209.0" prefHeight="47.0" prefWidth="372.0" styleClass="choiceBox" stylesheets="@styles.css" />
@@ -36,7 +33,6 @@
             </font>
         </TextArea>
         <Button layoutX="50.0" layoutY="626.0" mnemonicParsing="false" onAction="#submitReview" prefHeight="53.0" prefWidth="372.0" stylesheets="@styles.css" text="Submit" />
-      <Rating fx:id="ratingBar" layoutX="148.0" layoutY="287.0" />
     </AnchorPane>
     <VBox layoutX="-1.0" layoutY="5.0" prefHeight="721.0" prefWidth="186.0" style="-fx-background-color: #708090;">
         <Button mnemonicParsing="false" onAction="#homeScreen" prefHeight="65.0" prefWidth="186.0" stylesheets="@styles.css" text="Home" textFill="WHITE">

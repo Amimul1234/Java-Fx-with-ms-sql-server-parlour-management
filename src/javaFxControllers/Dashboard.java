@@ -165,6 +165,17 @@ public class Dashboard {
             }
         });
 
+        addServiceDetails.setOnAction(e->{
+            try {
+                Pane view = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getClassLoader().getResource("Fxml/AddServiceDetails.fxml")));
+
+                borderPane.setCenter(view);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+
     }
 
 }

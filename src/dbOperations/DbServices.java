@@ -1,5 +1,8 @@
 package dbOperations;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -192,6 +195,7 @@ public class DbServices {
                 String createServiceReview = "CREATE TABLE serviceReview(reviewId INTEGER PRIMARY KEY Identity(1,1) " +
                         ", name varchar(max), id INTEGER references service(id))" ;
 
+                assert connection != null;
                 ResultSet adminTable = connection.getMetaData().getTables(null, null,
                         "serviceReview", null);
 
@@ -203,12 +207,27 @@ public class DbServices {
                 }
             }
 
+            //service image table
+            {
+                String createServiceReview = "CREATE TABLE serviceImage(serviceImageId INTEGER PRIMARY KEY Identity(1,1) " +
+                        ", image varbinary(max), imageId INTEGER references service(id), UNIQUE (imageId))" ;
+
+                ResultSet serviceImage = connection.getMetaData().getTables(null, null,
+                        "serviceImage", null);
+
+                if (serviceImage.next()) {
+                    System.out.println("Service image table already exists");
+                } else {
+                    statement.executeUpdate(createServiceReview);
+                    System.out.println("Successfully created service image table");
+                }
+
+            }
         }
         else
         {
             System.out.println("Can not connect to database");
         }
-
     }
 
 
@@ -255,6 +274,47 @@ public class DbServices {
                 return serviceList;
 
             } catch (Exception e) {
+                return null;
+            }
+        }
+        else
+        {
+            System.out.println("Can not connect to database, please try again");
+            return null;
+        }
+    }
+
+    public synchronized List<Service> getSearchedService(String queryString)
+    {
+        if(connection != null)
+        {
+            List<Service> serviceList = new ArrayList<>();
+
+            try
+            {
+                Statement statement = connection.createStatement();
+
+                String query = "SELECT * FROM service WHERE CONTAINS (serviceName, " + "'\"" + queryString + "*\"')";
+
+                System.out.println(query);
+
+                ResultSet resultSet = statement.executeQuery(query);
+
+                while(resultSet.next())
+                {
+                    Service service = new Service();
+
+                    service.setId(resultSet.getInt("id"));
+                    service.setServiceName(resultSet.getString("serviceName"));
+                    service.setServicePrice(resultSet.getDouble("servicePrice"));
+
+                    serviceList.add(service);
+                }
+
+                return serviceList;
+            }catch (Exception e)
+            {
+                e.printStackTrace();
                 return null;
             }
         }
@@ -410,6 +470,32 @@ public class DbServices {
         {
             System.out.println("Can not save review to database");
             return null;
+        }
+    }
+
+    public synchronized void saveServiceImage(File file, Integer finalCustomerId) {
+        try {
+
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "INSERT INTO serviceImage VALUES (?, ?)");
+
+            FileInputStream fileInputStream = new FileInputStream(file.getPath());
+            byte[] bytes;
+            bytes = new byte[(int) file.length()];
+            fileInputStream.read(bytes, 0, bytes.length);
+            fileInputStream.close();
+
+            preparedStatement.setBytes(1, bytes);
+            preparedStatement.setInt(2, finalCustomerId);
+
+            preparedStatement.executeUpdate();
+
+            System.out.println(preparedStatement);
+
+            System.out.println("Service image inserted successfully!");
+
+        } catch (SQLException | IOException e) {
+            e.printStackTrace();
         }
     }
 }
