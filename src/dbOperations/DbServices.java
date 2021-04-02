@@ -7,8 +7,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import entities.Service;
+import entities.ServiceJoinedTable;
 import entities.ServiceReviewWithJoin;
 import entities.TimeSlots;
+import javafx.scene.control.TableColumn;
 
 public class DbServices {
 
@@ -497,5 +499,53 @@ public class DbServices {
         } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public synchronized ServiceJoinedTable getServiceJoinedTable(int serviceIdIdentifier) throws SQLException {
+
+        PreparedStatement getServiceJoinedTable = connection.prepareStatement
+                ("SELECT * FROM service LEFT JOIN serviceReview sR on service.id = sR.id WHERE service.id = ?");
+
+        getServiceJoinedTable.setInt(1, serviceIdIdentifier);
+
+        ResultSet resultSet = getServiceJoinedTable.executeQuery();
+
+        ServiceJoinedTable serviceJoinedTable = new ServiceJoinedTable();
+
+        int p = 1;
+
+        while(resultSet.next())
+        {
+            ServiceReviewWithJoin serviceReviewWithJoin = new ServiceReviewWithJoin();
+
+            if(p == 1)
+            {
+                serviceJoinedTable.setServiceName(resultSet.getString("serviceName"));
+                p++;
+            }
+
+            serviceReviewWithJoin.setServiceName(resultSet.getString("serviceName"));
+            serviceReviewWithJoin.setServiceReview(resultSet.getString("name"));
+            serviceReviewWithJoin.setServiceId(resultSet.getInt("id"));
+            serviceReviewWithJoin.setReviewId(resultSet.getInt("reviewId"));
+
+            serviceJoinedTable.addServiceReview(serviceReviewWithJoin);
+        }
+
+        PreparedStatement preparedStatement = connection.prepareStatement(
+                "SELECT * FROM service INNER JOIN serviceImage sR on service.id = sR.imageId WHERE service.id = ?");
+
+        preparedStatement.setInt(1, serviceIdIdentifier);
+
+        ResultSet resultSet1 = preparedStatement.executeQuery();
+
+        while(resultSet1.next())
+        {
+            serviceJoinedTable.setServiceImage(resultSet1.getBytes("image"));
+        }
+
+        return serviceJoinedTable;
+
     }
 }

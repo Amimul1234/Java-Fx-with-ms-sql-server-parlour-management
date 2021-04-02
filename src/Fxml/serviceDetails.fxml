@@ -10,16 +10,16 @@
 
 <AnchorPane prefHeight="721.0" prefWidth="1173.0" style="-fx-background-image: url('/HomeImages/background.jpg');;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFxControllers.ServiceDetails">
     
-    <Text layoutX="484.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service Details">
+    <Text fx:id="serviceName" layoutX="484.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service Details">
         <font>
             <Font name="System Bold" size="30.0" />
         </font>
     </Text>
-    <ImageView fx:id="customerImage" fitHeight="198.0" fitWidth="257.0" layoutX="458.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" />
-   <TableView fx:id="serviceReviewsTable" layoutX="166.0" layoutY="328.0" prefHeight="323.0" prefWidth="899.0">
+    <ImageView fx:id="serviceImage" fitHeight="198.0" fitWidth="257.0" layoutX="458.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" />
+   <TableView fx:id="serviceReviewsTable" layoutX="137.0" layoutY="280.0" prefHeight="413.0" prefWidth="899.0">
       <columns>
          <TableColumn fx:id="serviceId" prefWidth="129.0" text="Service Id" />
-         <TableColumn fx:id="serviceName" prefWidth="233.0" text="Service Name" />
+         <TableColumn fx:id="serviceNameTable" prefWidth="233.0" text="Service Name" />
          <TableColumn fx:id="serviceReview" prefWidth="347.0" text="Service Review" />
          <TableColumn fx:id="reviewId" prefWidth="162.0" text="Review Id" />
       </columns>
