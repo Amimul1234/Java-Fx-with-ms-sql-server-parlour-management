@@ -2,7 +2,7 @@ package javaFxControllers;
 
 import java.io.IOException;
 import java.util.List;
-import controllers.InvoiceController;
+
 import dbOperations.CustomerOperations;
 import entities.Customer;
 import entities.InvoiceData;
@@ -117,7 +117,7 @@ public class InvoiceDetail {
             Stage stage = (Stage) pane.getScene().getWindow();
             Scene scene = null;
             try {
-                scene = new Scene((Parent) loader.load(), 1173, 721);
+                scene = new Scene(loader.load(), 1173, 721);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -126,8 +126,11 @@ public class InvoiceDetail {
     }
 
     public void getItems() {
+
         observableList = FXCollections.observableArrayList();
+
         List<Service> services = InvoiceController.getServices(this.invoice.getInvoiceId());
+
         double tCost = 0;
         for (Service i : services) {
             tCost += i.getServicePrice();

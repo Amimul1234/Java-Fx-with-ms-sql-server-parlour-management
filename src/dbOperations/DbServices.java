@@ -474,8 +474,8 @@ public class DbServices {
     }
 
     public synchronized void saveServiceImage(File file, Integer finalCustomerId) {
-        try {
 
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement(
                     "INSERT INTO serviceImage VALUES (?, ?)");
 

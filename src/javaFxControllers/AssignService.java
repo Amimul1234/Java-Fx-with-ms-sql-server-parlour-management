@@ -2,7 +2,7 @@ package javaFxControllers;
 
 import java.io.IOException;
 import java.util.List;
-import controllers.InvoiceController;
+
 import dbOperations.DbServices;
 import entities.AssignS;
 import entities.Customer;

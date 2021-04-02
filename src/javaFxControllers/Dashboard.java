@@ -64,7 +64,8 @@ public class Dashboard {
 
         dashboard.setOnAction(e -> {
             try {
-                Pane view = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("Fxml/AdminDashboard.fxml")));
+                Pane view = FXMLLoader.load(Objects.requireNonNull(getClass().
+                        getClassLoader().getResource("Fxml/AdminDashboard.fxml")));
                 borderPane.setCenter(view);
             } catch (IOException ioException) {
                 ioException.printStackTrace();

@@ -3,7 +3,6 @@ package javaFxControllers;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import controllers.InvoiceController;
 import entities.InvoiceData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

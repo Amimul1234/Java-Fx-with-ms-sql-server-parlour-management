@@ -73,12 +73,12 @@ public class AddServiceDetails {
                 }
             }
 
-            Integer finalCustomerId = serviceId;
+            Integer serviceId1 = serviceId;
 
             new Thread(() -> {
                 try
                 {
-                    DbServices.getInstance().saveServiceImage(file, finalCustomerId);
+                    DbServices.getInstance().saveServiceImage(file, serviceId1);
 
                     Platform.runLater(() -> {
 
@@ -105,6 +105,7 @@ public class AddServiceDetails {
 
     @FXML
     void imageSelected() {
+
         FileChooser.ExtensionFilter imageFilter
                 = new FileChooser.ExtensionFilter("Image Files", "*.jpg");
 

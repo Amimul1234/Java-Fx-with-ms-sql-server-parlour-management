@@ -42,6 +42,7 @@ public class AddService {
             else
             {
                 Service service = new Service();
+
                 service.setServiceName(serviceName.getText());
                 service.setServicePrice(Double.parseDouble(servicePrice.getText()));
 

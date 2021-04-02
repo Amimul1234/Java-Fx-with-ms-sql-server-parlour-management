@@ -74,7 +74,7 @@ public class ServicesController implements Initializable {
     }
 
     @FXML
-    void goToService() throws IOException {
+    void goToService() {
     }
 
     @FXML
@@ -103,6 +103,7 @@ public class ServicesController implements Initializable {
 
     private void populateServiceTable() {
         new Thread(() -> {
+
             final List<Service> servicesList = dbOperations.DbServices.getInstance()
                     .getAllServicesRecords();
 
@@ -118,6 +119,7 @@ public class ServicesController implements Initializable {
     }
 
     private void initializeColumns() {
+
         serviceId.setCellValueFactory(new PropertyValueFactory<>("id"));
         serviceName.setCellValueFactory(new PropertyValueFactory<>("serviceName"));
         serviceCharge.setCellValueFactory(new PropertyValueFactory<>("servicePrice"));

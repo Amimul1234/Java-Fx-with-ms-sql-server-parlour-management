@@ -45,7 +45,8 @@ public class admindashboard {
             List<Service> serviceList = DbServices.getInstance().getAllServicesRecords();
 
 
-            Platform.runLater(() -> {
+            Platform.runLater(() ->
+            {
 
                 customerNumber.setText(customers.size() + "");
                 appointmentNumber.setText(appointments.size() + "");

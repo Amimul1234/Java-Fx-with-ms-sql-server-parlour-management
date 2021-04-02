@@ -56,7 +56,9 @@ public class AppointmentOperations {
     public synchronized void deleteAppointment(String appointmentNumber) throws SQLException {
         if(connection!=null)
         {
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM appointment WHERE appointmentNumber = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    "DELETE FROM appointment WHERE appointmentNumber = ?");
+
             preparedStatement.setString(1, appointmentNumber);
 
             System.out.println(preparedStatement);

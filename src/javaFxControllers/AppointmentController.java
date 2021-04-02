@@ -85,6 +85,7 @@ public class AppointmentController {
         acceptButton.setOnAction(e -> {
 
             int index = serviceTable.getSelectionModel().getSelectedIndex();
+
             allAppointments.get(index).setStatus("accepted");
 
             new Thread(() ->

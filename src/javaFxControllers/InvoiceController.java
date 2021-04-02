@@ -1,4 +1,4 @@
-package controllers;
+package javaFxControllers;
 
 import dbOperations.DbServices;
 import entities.InvoiceData;

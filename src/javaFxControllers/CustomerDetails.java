@@ -55,7 +55,8 @@ public class CustomerDetails {
     }
 
     @FXML
-    void addCustomerDetails() {
+    void addCustomerDetails()
+    {
         if(file == null)
         {
             showAlert("Error!", "Customer image can not be null");
@@ -67,6 +68,7 @@ public class CustomerDetails {
         else
         {
             String name = customerNameChoiceBox.getSelectionModel().getSelectedItem();
+
             Integer customerId = null;
 
             for(Customer customer : customerList)
@@ -81,7 +83,9 @@ public class CustomerDetails {
             Integer finalCustomerId = customerId;
 
             new Thread(() -> {
+
                 CustomerOperations customerOperations = new CustomerOperations();
+
                 try
                 {
                     customerOperations.saveCustomerDetails(file, finalCustomerId, remarks.getText());

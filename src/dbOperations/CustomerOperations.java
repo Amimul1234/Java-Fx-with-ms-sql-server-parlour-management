@@ -16,6 +16,7 @@ public class CustomerOperations {
 
     public boolean signup(String username, String email, String mobileNumber) {
         try {
+
             PreparedStatement preparedStatement = connection.prepareStatement(
                     "INSERT INTO Customer VALUES (?, ?, ?, ?)");
 
